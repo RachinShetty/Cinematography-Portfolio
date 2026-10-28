@@ -50,8 +50,8 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .label{font-size:.78rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
 .muted{color:var(--muted)}
 .lb{position:fixed;inset:0;z-index:200;background:#05080c;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:60px 12px 20px;animation:lbin .25s ease both}
-.lb .box{position:relative;background:#000;border-radius:12px;overflow:hidden;aspect-ratio:var(--ar);width:min(94vw,calc((100vh - 150px)*var(--arn)));width:min(94vw,calc((100dvh - 150px)*var(--arn)));max-width:1100px}
-.lb .box iframe{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:1}
+.lb .box{position:relative;background:#000;border-radius:12px;overflow:hidden;aspect-ratio:var(--ar);width:min(96vw,calc((100vh - 130px)*var(--arn)));width:min(96vw,calc((100dvh - 130px)*var(--arn)));max-width:1100px}
+.lb .box iframe,.stage iframe{position:absolute;left:0;top:0;width:100%;height:100%;border:0;z-index:1;transform-origin:0 0}
 .lb .ld{position:absolute;inset:0;display:grid;place-items:center;color:rgba(255,255,255,.6);font-size:.85rem}
 .lb .x{position:absolute;top:14px;right:14px;font-size:.85rem;font-weight:500;color:#111;background:#fff;border-radius:999px;padding:.45rem .95rem}
 .lb .meta{display:flex;flex-direction:column;align-items:center;gap:.35rem;text-align:center;color:#fff;max-width:94vw}
@@ -130,7 +130,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .card .live i{width:5px;height:5px;border-radius:50%;background:#e5534b;animation:blink 1.4s steps(1) infinite}
 .card.active .live{display:inline-flex}
 .stage{position:absolute;left:50%;top:0;width:var(--w);height:var(--h);margin-left:calc(var(--w)/-2);border-radius:16px;overflow:hidden;z-index:300;background:#000;box-shadow:0 40px 80px -30px rgba(0,0,0,.9);animation:fade .4s var(--ease) both}
-.stage iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.stage iframe{position:absolute;left:0;top:0;width:100%;height:100%;border:0;transform-origin:0 0}
 .stage .x{position:absolute;right:10px;top:10px;z-index:2;font-size:.75rem;font-weight:500;color:#111;background:#fff;border-radius:999px;padding:.3rem .7rem}
 .card.side{filter:brightness(.7) saturate(.85)}
 .card.active{box-shadow:0 40px 70px -30px rgba(0,0,0,.85),0 0 0 1px rgba(255,255,255,.12)}
@@ -455,6 +455,11 @@ footer a:hover{color:var(--fg)}
   var probe=new Image();probe.referrerPolicy='no-referrer';probe.onerror=function(){driveBlocked=true};probe.src='https://drive.google.com/thumbnail?id='+W.brand[1]+'&sz=w64';
 
   var bub=document.getElementById('bubble');
+  /* Drive's player breaks below ~480px: lay it out large, then scale it down to the box */
+  function fitFrame(box){var f=box&&box.querySelector('iframe');if(!f)return;var bw=box.clientWidth,bh=box.clientHeight;if(!bw||!bh)return;
+    var portrait=bh>bw,vw=Math.max(bw,portrait?480:720),k=bw/vw;
+    f.style.width=vw+'px';f.style.height=(vw*bh/bw)+'px';f.style.transform=k<1?'scale('+k+')':'none'}
+  window.addEventListener('resize',function(){document.querySelectorAll('.lb .box,.stage').forEach(fitFrame)});
   /* Mobile-safe playback */
   var lbOpen=false;
   function useLB(){return window.innerWidth<760||(window.matchMedia&&window.matchMedia('(pointer:coarse)').matches)}
@@ -473,7 +478,7 @@ footer a:hover{color:var(--fg)}
     l.innerHTML='<button class="x" type="button">Close ✕</button><div class="box"><span class="ld">Loading video…</span><iframe src="'+url+'/preview" allow="autoplay; fullscreen; encrypted-media" allowfullscreen title="'+it.title.replace(/"/g,'')+'"></iframe></div>'+
       '<div class="meta"><b>'+it.title+'</b><a href="'+url+'/view" target="_blank" rel="noopener">Not playing? Open in Google Drive ↗</a></div>';
     l.addEventListener('click',function(e){if(e.target===l||e.target.closest('.x'))closeLB()});
-    document.body.appendChild(l);document.documentElement.style.overflow='hidden';
+    document.body.appendChild(l);document.documentElement.style.overflow='hidden';fitFrame(l.querySelector('.box'));
     try{history.pushState({lb:1},'')}catch(e){}
     l.querySelector('.x').focus()}
   window.addEventListener('popstate',function(){if(lbOpen)closeLB(true)});
@@ -542,7 +547,7 @@ footer a:hover{color:var(--fg)}
   Arc.prototype.set=function(i){this.stop();this.active=(i+this.cards.length)%this.cards.length;this.layout()};
   Arc.prototype.inline=function(it){var self=this;this.stop();this.playing=true;var s=document.createElement('div');s.className='stage';
     s.innerHTML='<iframe src="https://drive.google.com/file/d/'+it.id+'/preview" allow="autoplay; fullscreen" allowfullscreen title="'+it.title.replace(/"/g,'')+'"></iframe><button class="x" type="button">Close ✕</button>';
-    s.querySelector('.x').addEventListener('click',function(e){e.stopPropagation();self.stop()});this.root.appendChild(s);bub.classList.remove('on')};
+    s.querySelector('.x').addEventListener('click',function(e){e.stopPropagation();self.stop()});this.root.appendChild(s);fitFrame(s);bub.classList.remove('on')};
   Arc.prototype.go=function(d){this.set(this.active+d)};
 
   var arcs={
