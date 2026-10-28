@@ -11,7 +11,7 @@ import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 THUMBS = os.path.join(ROOT, "assets", "thumbs")
-PREV = os.path.join(ROOT, "assets", "prev")
+PREV = os.path.join(ROOT, "assets", "hd")
 TMP = os.path.join(ROOT, ".tmp")
 os.makedirs(THUMBS, exist_ok=True)
 os.makedirs(PREV, exist_ok=True)
@@ -48,17 +48,17 @@ def build(fid, orient, src):
     if start + 6 > dur:
         start = max(0.0, dur - 6.5)
     if orient == "v":
-        thumb_scale, prev_scale = "scale=-2:960", "scale=-2:640"
+        thumb_scale, prev_scale = "scale=-2:960", "scale=-2:1280"
     else:
-        thumb_scale, prev_scale = "scale=1280:-2", "scale=640:-2"
+        thumb_scale, prev_scale = "scale=1280:-2", "scale=1280:-2"
     tp = os.path.join(THUMBS, fid + ".jpg")
     pp = os.path.join(PREV, fid + ".mp4")
     r1 = run(["ffmpeg", "-y", "-loglevel", "error", "-ss", f"{start + 1:.2f}", *inp, "-i", src,
               "-frames:v", "1", "-vf", thumb_scale, "-q:v", "4", tp])
     r2 = run(["ffmpeg", "-y", "-loglevel", "error", "-ss", f"{start:.2f}", *inp, "-i", src,
-              "-t", "6", "-an", "-vf", prev_scale + ",fps=24", "-c:v", "libx264", "-preset", "veryfast",
-              "-crf", "30", "-pix_fmt", "yuv420p", "-movflags", "+faststart", pp])
-    ok = os.path.exists(tp) and os.path.getsize(tp) > 1000 and os.path.exists(pp) and os.path.getsize(pp) > 5000
+              "-t", "6", "-an", "-vf", prev_scale + ",fps=30", "-c:v", "libx264", "-preset", "slow",
+              "-crf", "21", "-profile:v", "high", "-level", "4.1", "-pix_fmt", "yuv420p", "-movflags", "+faststart", pp])
+    ok = os.path.exists(tp) and os.path.getsize(tp) > 1000 and os.path.exists(pp) and os.path.getsize(pp) > 20000
     if not ok:
         for p in (tp, pp):
             if os.path.exists(p):
