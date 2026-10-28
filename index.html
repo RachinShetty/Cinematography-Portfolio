@@ -241,6 +241,24 @@ footer a:hover{color:var(--fg)}
   *,*::before,*::after{animation:none!important;transition-duration:.01s!important}
   .js .statement .w{opacity:1}
 }
+
+/* Phone layout (desktop unchanged) */
+@media (max-width:640px){
+  .section{padding-block:4.5rem 0}
+  .pill{font-size:.72rem;white-space:nowrap;max-width:100%}
+  .arc{margin-top:2rem}
+  .arc.v{--w:min(58vw,240px);height:calc(var(--h) + 56px)}
+  .arc.l{--w:min(84vw,520px);height:calc(var(--h) + 48px)}
+  .card,.stage{border-radius:14px}
+  .arc-foot{margin-top:.6rem}
+  .now b{font-size:.95rem}
+  .dl div{display:grid;grid-template-columns:minmax(0,1fr) auto;row-gap:.35rem;column-gap:.8rem}
+  .dl .k{grid-column:1/-1}
+  .dl .v{font-size:.95rem}
+  .wa-float{right:12px;bottom:12px;width:46px;height:46px}
+  .wa-float svg{width:22px;height:22px}
+  footer .wrap{padding-bottom:4.5rem}
+}
 </style>
 </head>
 <body>
