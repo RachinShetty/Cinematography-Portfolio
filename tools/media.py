@@ -47,12 +47,14 @@ def build(fid, orient, src):
     start = 1.0 if dur < 20 else min(dur * 0.2, 60.0)
     if start + 6 > dur:
         start = max(0.0, dur - 6.5)
-    if orient == "v":
-        thumb_scale, prev_scale = "scale=-2:960", "scale=-2:1280"
-    else:
-        thumb_scale, prev_scale = "scale=1280:-2", "scale=1280:-2"
-    tp = os.path.join(THUMBS, fid + ".jpg")
-    pp = os.path.join(PREV, fid + ".mp4")
+    # long edge 1280 for previews whatever the real shape of the footage
+    prev_scale = "scale='if(gt(iw,ih),1280,-2)':'if(gt(iw,ih),-2,1280)'"
+    thumb_scale = "scale=-2:960" if orient == "v" else "scale=1280:-2"
+    final_tp = os.path.join(THUMBS, fid + ".jpg")
+    final_pp = os.path.join(PREV, fid + ".mp4")
+    # build into temp files; existing outputs are only replaced on success
+    tp = os.path.join(TMP, fid + ".jpg")
+    pp = os.path.join(TMP, fid + ".mp4")
     r1 = run(["ffmpeg", "-y", "-loglevel", "error", "-ss", f"{start + 1:.2f}", *inp, "-i", src,
               "-frames:v", "1", "-vf", thumb_scale, "-q:v", "4", tp])
     r2 = run(["ffmpeg", "-y", "-loglevel", "error", "-ss", f"{start:.2f}", *inp, "-i", src,
@@ -64,6 +66,11 @@ def build(fid, orient, src):
             if os.path.exists(p):
                 os.remove(p)
         return False, (r1.stderr + r2.stderr)[-300:]
+    if not os.path.exists(final_tp):
+        os.replace(tp, final_tp)
+    else:
+        os.remove(tp)
+    os.replace(pp, final_pp)
     return True, f"dur={dur:.0f}s"
 
 
@@ -78,7 +85,7 @@ def main():
             ok, msg = build(fid, orient, url(fid))
             if not ok:
                 # Fallback: download the whole file with gdown, then build from disk.
-                local = os.path.join(TMP, fid)
+                local = os.path.join(TMP, fid + ".src")
                 g = run([sys.executable, "-m", "gdown", "--quiet", "-O", local, fid], 1800)
                 if os.path.exists(local) and os.path.getsize(local) > 10000:
                     ok, msg = build(fid, orient, local)

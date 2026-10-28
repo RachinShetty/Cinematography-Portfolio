@@ -528,9 +528,9 @@ footer a:hover{color:var(--fg)}
       var tone=TONES[(i*5+(it.cat.length))%TONES.length];
       var ph=it.cat==='podcast'?'<div class="ph" style="background:'+tone+'"><small>GUESSS India Podcast</small><strong>Ep. '+it.ep+'</strong><span class="pt">'+it.pt+'</span></div>'
         :'<div class="ph" style="background:'+tone+'"><small>'+LBL[it.cat]+'</small><strong>'+it.title.replace(/.* /,'')+'</strong><span class="pt">'+LBL[it.cat]+'</span></div>';
-      var pv=MEDIA[it.id]?{src:'assets/prev/'+it.id+'.mp4',poster:'assets/thumbs/'+it.id+'.jpg'}:PREV[it.id];
+      var pv=MEDIA[it.id]?{hd:'assets/hd/'+it.id+'.mp4',src:'assets/prev/'+it.id+'.mp4',poster:'assets/thumbs/'+it.id+'.jpg'}:PREV[it.id];
       var wide=self.key==='v'&&MEDIA[it.id]==='w';if(wide)a.classList.add('wide');
-      a.innerHTML=ph+(wide?'<span class="blur" style="background-image:url('+pv.poster+')"></span>':'')+(pv?'<video class="pv" muted loop playsinline webkit-playsinline disablepictureinpicture disableremoteplayback preload="none" poster="'+pv.poster+'"><source src="'+pv.src+'" type="video/mp4"></video><span class="live"><i></i>PREVIEW</span>':'<img alt="" loading="lazy" referrerpolicy="no-referrer">')+'<span class="tag">'+LBL[it.cat]+'</span><span class="play" aria-hidden="true"></span>';
+      a.innerHTML=ph+(wide?'<span class="blur" style="background-image:url('+pv.poster+')"></span>':'')+(pv?'<video class="pv" muted loop playsinline webkit-playsinline disablepictureinpicture disableremoteplayback preload="none" poster="'+pv.poster+'">'+(pv.hd?'<source src="'+pv.hd+'" type="video/mp4">':'')+'<source src="'+pv.src+'" type="video/mp4"></video><span class="live"><i></i>PREVIEW</span>':'<img alt="" loading="lazy" referrerpolicy="no-referrer">')+'<span class="tag">'+LBL[it.cat]+'</span><span class="play" aria-hidden="true"></span>';
       var img=a.querySelector('img');
       if(img){img.addEventListener('error',function(){img.remove()});img.src=W.local[it.id]||('https://drive.google.com/thumbnail?id='+it.id+'&sz=w'+(self.key==='v'?'600':'1000'))}
       var vd=a.querySelector('video');if(vd){vd.muted=true;vd.defaultMuted=true}
