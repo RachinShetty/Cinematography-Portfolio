@@ -49,6 +49,15 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .wrap{max-width:1200px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 .label{font-size:.78rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
 .muted{color:var(--muted)}
+.lb{position:fixed;inset:0;z-index:200;background:#05080c;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:60px 12px 20px;animation:lbin .25s ease both}
+.lb .box{position:relative;background:#000;border-radius:12px;overflow:hidden;aspect-ratio:var(--ar);width:min(94vw,calc((100vh - 150px)*var(--arn)));width:min(94vw,calc((100dvh - 150px)*var(--arn)));max-width:1100px}
+.lb .box iframe{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:1}
+.lb .ld{position:absolute;inset:0;display:grid;place-items:center;color:rgba(255,255,255,.6);font-size:.85rem}
+.lb .x{position:absolute;top:14px;right:14px;font-size:.85rem;font-weight:500;color:#111;background:#fff;border-radius:999px;padding:.45rem .95rem}
+.lb .meta{display:flex;flex-direction:column;align-items:center;gap:.35rem;text-align:center;color:#fff;max-width:94vw}
+.lb .meta b{font-weight:500;font-size:.95rem}
+.lb .meta a{font-size:.8rem;color:rgba(255,255,255,.7);text-decoration:underline;text-underline-offset:3px}
+@keyframes lbin{from{opacity:0}to{opacity:1}}
 @keyframes fade{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 @keyframes blink{50%{opacity:.15}}
 
@@ -446,6 +455,31 @@ footer a:hover{color:var(--fg)}
   var probe=new Image();probe.referrerPolicy='no-referrer';probe.onerror=function(){driveBlocked=true};probe.src='https://drive.google.com/thumbnail?id='+W.brand[1]+'&sz=w64';
 
   var bub=document.getElementById('bubble');
+  /* Mobile-safe playback */
+  var lbOpen=false;
+  function useLB(){return window.innerWidth<760||(window.matchMedia&&window.matchMedia('(pointer:coarse)').matches)}
+  function tryPlay(v){v.muted=true;var pr;try{pr=v.play()}catch(e){}
+    if(pr&&pr.catch)pr.catch(function(){v.addEventListener('canplay',function f(){v.removeEventListener('canplay',f);if(!lbOpen){var q=v.play();if(q&&q.catch)q.catch(function(){})}})})}
+  /* first touch unlocks autoplay on phones in low-power / data-saver modes */
+  ['touchstart','pointerdown'].forEach(function(t){document.addEventListener(t,function u(){document.removeEventListener(t,u,true);
+    document.querySelectorAll('.card.active video').forEach(function(v){if(!lbOpen)tryPlay(v)})},true)});
+  function setPreviews(on){document.querySelectorAll('.card.active video').forEach(function(v){if(on)tryPlay(v);else{try{v.pause()}catch(e){}}})}
+  function closeLB(fromPop){var l=document.querySelector('.lb');if(!l)return;l.remove();lbOpen=false;document.documentElement.style.overflow='';
+    setPreviews(true);if(!fromPop&&history.state&&history.state.lb)history.back()}
+  function openLB(it,vert){closeLB(true);lbOpen=true;setPreviews(false);bub.classList.remove('on');
+    var l=document.createElement('div');l.className='lb';l.setAttribute('role','dialog');l.setAttribute('aria-modal','true');l.setAttribute('aria-label',it.title);
+    l.style.setProperty('--ar',vert?'9/16':'16/9');l.style.setProperty('--arn',vert?(9/16):(16/9));
+    var url='https://drive.google.com/file/d/'+it.id;
+    l.innerHTML='<button class="x" type="button">Close ✕</button><div class="box"><span class="ld">Loading video…</span><iframe src="'+url+'/preview" allow="autoplay; fullscreen; encrypted-media" allowfullscreen title="'+it.title.replace(/"/g,'')+'"></iframe></div>'+
+      '<div class="meta"><b>'+it.title+'</b><a href="'+url+'/view" target="_blank" rel="noopener">Not playing? Open in Google Drive ↗</a></div>';
+    l.addEventListener('click',function(e){if(e.target===l||e.target.closest('.x'))closeLB()});
+    document.body.appendChild(l);document.documentElement.style.overflow='hidden';
+    try{history.pushState({lb:1},'')}catch(e){}
+    l.querySelector('.x').focus()}
+  window.addEventListener('popstate',function(){if(lbOpen)closeLB(true)});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&lbOpen)closeLB()});
+  document.addEventListener('visibilitychange',function(){if(!document.hidden&&!lbOpen)setPreviews(true)});
+
   /* Fanned carousel */
   function Arc(key,all,o){
     this.key=key;this.all=all;this.items=all;this.o=o;this.active=0;this.root=document.getElementById('arc-'+key);
@@ -463,11 +497,11 @@ footer a:hover{color:var(--fg)}
     this.root.addEventListener('click',function(e){var c=e.target.closest('.card');if(!c)return;
       if(moved){e.preventDefault();moved=false;return}
       var i=+c.dataset.i;if(i!==self.active){e.preventDefault();self.set(i);return}
-      if(!driveBlocked){e.preventDefault();self.inline(self.items[i])}});
+      if(!driveBlocked){e.preventDefault();var it=self.items[i];if(useLB())openLB(it,self.key==='v'&&MEDIA[it.id]!=='w');else self.inline(it)}});
     this.visible=true;
     if('IntersectionObserver' in window){new IntersectionObserver(function(es){self.visible=es[0].isIntersecting;self.layout()},{threshold:.15}).observe(this.root)}
     this.render();
-    if(!reduce)setInterval(function(){if(!self.paused&&!self.playing&&!document.hidden)self.go(1)},o.auto);
+    if(!reduce)setInterval(function(){if(!self.paused&&!self.playing&&!lbOpen&&!document.hidden)self.go(1)},window.innerWidth<640?o.auto*1.6:o.auto);
     window.addEventListener('resize',function(){self.layout()});
   }
   Arc.prototype.filter=function(f){this.items=f==='all'?this.all:this.all.filter(function(it){return it.cat===f});this.active=0;this.render()};
@@ -482,7 +516,7 @@ footer a:hover{color:var(--fg)}
         :'<div class="ph" style="background:'+tone+'"><small>'+LBL[it.cat]+'</small><strong>'+it.title.replace(/.* /,'')+'</strong><span class="pt">'+LBL[it.cat]+'</span></div>';
       var pv=MEDIA[it.id]?{src:'assets/prev/'+it.id+'.mp4',poster:'assets/thumbs/'+it.id+'.jpg'}:PREV[it.id];
       var wide=self.key==='v'&&MEDIA[it.id]==='w';if(wide)a.classList.add('wide');
-      a.innerHTML=ph+(wide?'<span class="blur" style="background-image:url('+pv.poster+')"></span>':'')+(pv?'<video class="pv" muted loop playsinline preload="none" poster="'+pv.poster+'"><source src="'+pv.src+'" type="video/mp4"></video><span class="live"><i></i>PREVIEW</span>':'<img alt="" loading="lazy" referrerpolicy="no-referrer">')+'<span class="tag">'+LBL[it.cat]+'</span><span class="play" aria-hidden="true"></span>';
+      a.innerHTML=ph+(wide?'<span class="blur" style="background-image:url('+pv.poster+')"></span>':'')+(pv?'<video class="pv" muted loop playsinline webkit-playsinline disablepictureinpicture disableremoteplayback preload="none" poster="'+pv.poster+'"><source src="'+pv.src+'" type="video/mp4"></video><span class="live"><i></i>PREVIEW</span>':'<img alt="" loading="lazy" referrerpolicy="no-referrer">')+'<span class="tag">'+LBL[it.cat]+'</span><span class="play" aria-hidden="true"></span>';
       var img=a.querySelector('img');
       if(img){img.addEventListener('error',function(){img.remove()});img.src=W.local[it.id]||('https://drive.google.com/thumbnail?id='+it.id+'&sz=w'+(self.key==='v'?'600':'1000'))}
       var vd=a.querySelector('video');if(vd){vd.muted=true;vd.defaultMuted=true}
@@ -499,7 +533,7 @@ footer a:hover{color:var(--fg)}
       c.style.zIndex=100-ad;c.style.opacity=ad>range?0:(ad===range&&n>3?.55:1);
       c.style.pointerEvents=ad>range?'none':'auto';c.tabIndex=d===0?0:-1;
       c.classList.toggle('active',d===0);c.classList.toggle('side',d!==0);
-      var vd=c.querySelector('video');if(vd){if(ad<=(narrow?0:1)&&this.visible&&!reduce){var pr=vd.play();if(pr&&pr.catch)pr.catch(function(){})}else{try{vd.pause()}catch(e){}}}
+      var vd=c.querySelector('video');if(vd){if(ad<=(narrow?0:1)&&this.visible&&!reduce&&!lbOpen){vd.preload='auto';tryPlay(vd)}else{if(ad<=(narrow?1:2))vd.preload='auto';try{vd.pause()}catch(e){}}}
     }
     var it=this.items[this.active];if(it){this.now.querySelector('b').textContent=it.title;this.now.querySelector('span').textContent=it.sub}
     this.count.textContent=pad(this.active)+' / '+(n<10?'0':'')+n;
