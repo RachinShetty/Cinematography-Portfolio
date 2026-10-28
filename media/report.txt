@@ -1,14 +1,14 @@
-1m37mxMVSPP8hgWYXMAAZDlG04jeo7geM ok dur=43s
-1y8806BQyAIQI9opvBIDyHQy30wJ3Enxw ok dur=48s
-1ehJYhU-xMd5RTTa0JkqrRH2SQPk3sY-y ok dur=28s
-12-BPG_hkSKi9WCRI3EiqZJUKyRyuOAp_ ok dur=30s
-1_ap_GTFWt0fQTkM4TaEd237e55pOiPOL ok dur=33s
-1Num7BHSv1xvwX53AwQ67pv3Kltss5Gis ok dur=67s
-1l1VrJx3m3vEAH8Jly5IfWvcqIXBnKtAE ok dur=41s
-1OcF3KOLZ2mq7JHyd53faO9Gkoej1A2sx ok dur=37s
-125JWTUPDv_0kkASMdAl4jy5oXZfUm4t0 ok dur=61s
-1NkdzMckhma_yaZnB6fnT7YwGdy4phPeI ok dur=48s
-1T53TKH4BKezEmBIaB7--jtAXFTO9GN_L ok dur=37s
+1m37mxMVSPP8hgWYXMAAZDlG04jeo7geM skip
+1y8806BQyAIQI9opvBIDyHQy30wJ3Enxw skip
+1ehJYhU-xMd5RTTa0JkqrRH2SQPk3sY-y skip
+12-BPG_hkSKi9WCRI3EiqZJUKyRyuOAp_ skip
+1_ap_GTFWt0fQTkM4TaEd237e55pOiPOL FAIL download failed: ministrator.  You may still be able to access the file from the browser:  	https://drive.google.com/uc?id=1_ap_GTFWt0fQTkM4TaEd237e55pOiPOL  but Gdown can't. Please check connections and permissions. 
+1Num7BHSv1xvwX53AwQ67pv3Kltss5Gis FAIL download failed: ministrator.  You may still be able to access the file from the browser:  	https://drive.google.com/uc?id=1Num7BHSv1xvwX53AwQ67pv3Kltss5Gis  but Gdown can't. Please check connections and permissions. 
+1l1VrJx3m3vEAH8Jly5IfWvcqIXBnKtAE skip
+1OcF3KOLZ2mq7JHyd53faO9Gkoej1A2sx skip
+125JWTUPDv_0kkASMdAl4jy5oXZfUm4t0 skip
+1NkdzMckhma_yaZnB6fnT7YwGdy4phPeI skip
+1T53TKH4BKezEmBIaB7--jtAXFTO9GN_L skip
 1CPgHdFf4QhzqYSa3C65jJmrAm2QaWtQM FAIL download failed: ministrator.  You may still be able to access the file from the browser:  	https://drive.google.com/uc?id=1CPgHdFf4QhzqYSa3C65jJmrAm2QaWtQM  but Gdown can't. Please check connections and permissions. 
 1N6CphtOKpXZwMKibYKtTb2lavLuTwxyK FAIL download failed: ministrator.  You may still be able to access the file from the browser:  	https://drive.google.com/uc?id=1N6CphtOKpXZwMKibYKtTb2lavLuTwxyK  but Gdown can't. Please check connections and permissions. 
 1heDQs4iObsE7E1uCYXdaRqKvM1SQKHCW FAIL download failed: ministrator.  You may still be able to access the file from the browser:  	https://drive.google.com/uc?id=1heDQs4iObsE7E1uCYXdaRqKvM1SQKHCW  but Gdown can't. Please check connections and permissions. 
