@@ -2,47 +2,47 @@
 1y8806BQyAIQI9opvBIDyHQy30wJ3Enxw skip
 1ehJYhU-xMd5RTTa0JkqrRH2SQPk3sY-y skip
 12-BPG_hkSKi9WCRI3EiqZJUKyRyuOAp_ skip
-1_ap_GTFWt0fQTkM4TaEd237e55pOiPOL FAIL download failed: ministrator.  You may still be able to access the file from the browser:  	https://drive.google.com/uc?id=1_ap_GTFWt0fQTkM4TaEd237e55pOiPOL  but Gdown can't. Please check connections and permissions. 
-1Num7BHSv1xvwX53AwQ67pv3Kltss5Gis FAIL download failed: ministrator.  You may still be able to access the file from the browser:  	https://drive.google.com/uc?id=1Num7BHSv1xvwX53AwQ67pv3Kltss5Gis  but Gdown can't. Please check connections and permissions. 
+1_ap_GTFWt0fQTkM4TaEd237e55pOiPOL ok dur=33s
+1Num7BHSv1xvwX53AwQ67pv3Kltss5Gis ok dur=67s
 1l1VrJx3m3vEAH8Jly5IfWvcqIXBnKtAE skip
 1OcF3KOLZ2mq7JHyd53faO9Gkoej1A2sx skip
 125JWTUPDv_0kkASMdAl4jy5oXZfUm4t0 skip
 1NkdzMckhma_yaZnB6fnT7YwGdy4phPeI skip
 1T53TKH4BKezEmBIaB7--jtAXFTO9GN_L skip
-1CPgHdFf4QhzqYSa3C65jJmrAm2QaWtQM FAIL download failed: ministrator.  You may still be able to access the file from the browser:  	https://drive.google.com/uc?id=1CPgHdFf4QhzqYSa3C65jJmrAm2QaWtQM  but Gdown can't. Please check connections and permissions. 
-1N6CphtOKpXZwMKibYKtTb2lavLuTwxyK FAIL download failed: ministrator.  You may still be able to access the file from the browser:  	https://drive.google.com/uc?id=1N6CphtOKpXZwMKibYKtTb2lavLuTwxyK  but Gdown can't. Please check connections and permissions. 
-1heDQs4iObsE7E1uCYXdaRqKvM1SQKHCW FAIL download failed: ministrator.  You may still be able to access the file from the browser:  	https://drive.google.com/uc?id=1heDQs4iObsE7E1uCYXdaRqKvM1SQKHCW  but Gdown can't. Please check connections and permissions. 
-1qyZmE9Lzr1lhpwO-ic5letZCH2bXtdyU FAIL download failed: ministrator.  You may still be able to access the file from the browser:  	https://drive.google.com/uc?id=1qyZmE9Lzr1lhpwO-ic5letZCH2bXtdyU  but Gdown can't. Please check connections and permissions. 
-1pLKjj1j-C5AYANetC5g6opNCi77ouiR2 FAIL download failed: ministrator.  You may still be able to access the file from the browser:  	https://drive.google.com/uc?id=1pLKjj1j-C5AYANetC5g6opNCi77ouiR2  but Gdown can't. Please check connections and permissions. 
-1cO98I6cRj4InKumzjYkISdO4NJPLe1ij FAIL download failed: ministrator.  You may still be able to access the file from the browser:  	https://drive.google.com/uc?id=1cO98I6cRj4InKumzjYkISdO4NJPLe1ij  but Gdown can't. Please check connections and permissions. 
-1gLffTP6vnGQJlwlrt3tXiJFdRc8M9CkX FAIL download failed: ministrator.  You may still be able to access the file from the browser:  	https://drive.google.com/uc?id=1gLffTP6vnGQJlwlrt3tXiJFdRc8M9CkX  but Gdown can't. Please check connections and permissions. 
-1QfD6mTBkGqH-sl77HNAzoqvK719WvTLv FAIL download failed: ministrator.  You may still be able to access the file from the browser:  	https://drive.google.com/uc?id=1QfD6mTBkGqH-sl77HNAzoqvK719WvTLv  but Gdown can't. Please check connections and permissions. 
-1DfzQhOP_iloFQZoKOiON7darI6mm6Guv FAIL download failed: ministrator.  You may still be able to access the file from the browser:  	https://drive.google.com/uc?id=1DfzQhOP_iloFQZoKOiON7darI6mm6Guv  but Gdown can't. Please check connections and permissions. 
-1dco4lZXNzSNfB6GLQd5cA9lyso6Akemv FAIL download failed: ministrator.  You may still be able to access the file from the browser:  	https://drive.google.com/uc?id=1dco4lZXNzSNfB6GLQd5cA9lyso6Akemv  but Gdown can't. Please check connections and permissions. 
-14DDeQ1wPRMHmr7f_49p20p3sPMR0_wsR FAIL download failed: ministrator.  You may still be able to access the file from the browser:  	https://drive.google.com/uc?id=14DDeQ1wPRMHmr7f_49p20p3sPMR0_wsR  but Gdown can't. Please check connections and permissions. 
-18I2GHq3ytzffaM2J-PzpRBxp9duebfak FAIL download failed: ministrator.  You may still be able to access the file from the browser:  	https://drive.google.com/uc?id=18I2GHq3ytzffaM2J-PzpRBxp9duebfak  but Gdown can't. Please check connections and permissions. 
-1qgLIiD0UAe_s7X9e_1J9Qgfk18SIjSgE FAIL download failed: ministrator.  You may still be able to access the file from the browser:  	https://drive.google.com/uc?id=1qgLIiD0UAe_s7X9e_1J9Qgfk18SIjSgE  but Gdown can't. Please check connections and permissions. 
-1K3u5Wm-KNIMgm5JIIXZGHwvJtWL4_8ly FAIL download failed: ministrator.  You may still be able to access the file from the browser:  	https://drive.google.com/uc?id=1K3u5Wm-KNIMgm5JIIXZGHwvJtWL4_8ly  but Gdown can't. Please check connections and permissions. 
-1k8h1fNg5v8BlOLckb1A949pAS4yCRKw6 FAIL download failed: ministrator.  You may still be able to access the file from the browser:  	https://drive.google.com/uc?id=1k8h1fNg5v8BlOLckb1A949pAS4yCRKw6  but Gdown can't. Please check connections and permissions. 
-1zKDG3XI40-K4TpjwpT5tCLzXJti4KXpF FAIL download failed: ministrator.  You may still be able to access the file from the browser:  	https://drive.google.com/uc?id=1zKDG3XI40-K4TpjwpT5tCLzXJti4KXpF  but Gdown can't. Please check connections and permissions. 
-1yxoS7UauwR9C27-eWFNGpLTroSdHUXRz FAIL download failed: ministrator.  You may still be able to access the file from the browser:  	https://drive.google.com/uc?id=1yxoS7UauwR9C27-eWFNGpLTroSdHUXRz  but Gdown can't. Please check connections and permissions. 
-1HYBwRPon3Qe8v3CNvZImf8IRDIE-876b FAIL download failed: ministrator.  You may still be able to access the file from the browser:  	https://drive.google.com/uc?id=1HYBwRPon3Qe8v3CNvZImf8IRDIE-876b  but Gdown can't. Please check connections and permissions. 
-1LJCoO8d8NVGKN8PUiiJ-VdxFffdFc4gW FAIL download failed: ministrator.  You may still be able to access the file from the browser:  	https://drive.google.com/uc?id=1LJCoO8d8NVGKN8PUiiJ-VdxFffdFc4gW  but Gdown can't. Please check connections and permissions. 
-1SJu4TQ_hEqlVzwn3Z4JMLBB7JlsGPwyS FAIL download failed: ministrator.  You may still be able to access the file from the browser:  	https://drive.google.com/uc?id=1SJu4TQ_hEqlVzwn3Z4JMLBB7JlsGPwyS  but Gdown can't. Please check connections and permissions. 
-1VH6W1hikNdoRLhHdhQ5UsjWd3375sNMI FAIL download failed: ministrator.  You may still be able to access the file from the browser:  	https://drive.google.com/uc?id=1VH6W1hikNdoRLhHdhQ5UsjWd3375sNMI  but Gdown can't. Please check connections and permissions. 
-1Cf5N8cBlBI5ntTVhbxnUrguQIHf2I3F7 FAIL download failed: ministrator.  You may still be able to access the file from the browser:  	https://drive.google.com/uc?id=1Cf5N8cBlBI5ntTVhbxnUrguQIHf2I3F7  but Gdown can't. Please check connections and permissions. 
-1kDi7Y6WwIPLwGTGi8u8y3XYwmDBN9Xji FAIL download failed: ministrator.  You may still be able to access the file from the browser:  	https://drive.google.com/uc?id=1kDi7Y6WwIPLwGTGi8u8y3XYwmDBN9Xji  but Gdown can't. Please check connections and permissions. 
-1keoN5JXvDelSq0XrJKW9GD_qp0Aometi FAIL download failed: ministrator.  You may still be able to access the file from the browser:  	https://drive.google.com/uc?id=1keoN5JXvDelSq0XrJKW9GD_qp0Aometi  but Gdown can't. Please check connections and permissions. 
-1BcGNaC_F20ySYMmkMtBh5Kxahdl6qYdH FAIL download failed: ministrator.  You may still be able to access the file from the browser:  	https://drive.google.com/uc?id=1BcGNaC_F20ySYMmkMtBh5Kxahdl6qYdH  but Gdown can't. Please check connections and permissions. 
-11InLL9ePQwGqAtEjF4iPkhWtcjKN3wN6 FAIL download failed: ministrator.  You may still be able to access the file from the browser:  	https://drive.google.com/uc?id=11InLL9ePQwGqAtEjF4iPkhWtcjKN3wN6  but Gdown can't. Please check connections and permissions. 
-1OtZgr2t6C9v1IGloduhSv_ucAJ2RUs4C FAIL download failed: ministrator.  You may still be able to access the file from the browser:  	https://drive.google.com/uc?id=1OtZgr2t6C9v1IGloduhSv_ucAJ2RUs4C  but Gdown can't. Please check connections and permissions. 
-1g_Hbqi_U8Bw9RbmMT22qFEsx2RHMNAs9 FAIL download failed: ministrator.  You may still be able to access the file from the browser:  	https://drive.google.com/uc?id=1g_Hbqi_U8Bw9RbmMT22qFEsx2RHMNAs9  but Gdown can't. Please check connections and permissions. 
-1EKvXt72yJxq_MDGtAgkZnfT8Nsuuoxdo FAIL download failed: ministrator.  You may still be able to access the file from the browser:  	https://drive.google.com/uc?id=1EKvXt72yJxq_MDGtAgkZnfT8Nsuuoxdo  but Gdown can't. Please check connections and permissions. 
-1TY6HK3vcp4q6ztYIxpJUK-Xfzfx_02tS FAIL download failed: ministrator.  You may still be able to access the file from the browser:  	https://drive.google.com/uc?id=1TY6HK3vcp4q6ztYIxpJUK-Xfzfx_02tS  but Gdown can't. Please check connections and permissions. 
-1nG-S-9QrhstRyOFjf2UxIbdGtJcBigRI FAIL download failed: ministrator.  You may still be able to access the file from the browser:  	https://drive.google.com/uc?id=1nG-S-9QrhstRyOFjf2UxIbdGtJcBigRI  but Gdown can't. Please check connections and permissions. 
-1XydtqB-tP4hYarGPxzMheU1BBa-k8GvC FAIL download failed: ministrator.  You may still be able to access the file from the browser:  	https://drive.google.com/uc?id=1XydtqB-tP4hYarGPxzMheU1BBa-k8GvC  but Gdown can't. Please check connections and permissions. 
-1HufUNASOUXFNFctb03BR0yuhBUdE2764 FAIL download failed: ministrator.  You may still be able to access the file from the browser:  	https://drive.google.com/uc?id=1HufUNASOUXFNFctb03BR0yuhBUdE2764  but Gdown can't. Please check connections and permissions. 
-1B6fF-AdtGnUF1xV6H1JhZHwNm3mJsqvj FAIL download failed: ministrator.  You may still be able to access the file from the browser:  	https://drive.google.com/uc?id=1B6fF-AdtGnUF1xV6H1JhZHwNm3mJsqvj  but Gdown can't. Please check connections and permissions. 
-1tZKiPS2DIqwSaOjhBlzIVtIrNPAM16EO FAIL download failed: ministrator.  You may still be able to access the file from the browser:  	https://drive.google.com/uc?id=1tZKiPS2DIqwSaOjhBlzIVtIrNPAM16EO  but Gdown can't. Please check connections and permissions. 
-10aszkneb4--R29_MtU_gs7qf4eHVIG3U FAIL download failed: ministrator.  You may still be able to access the file from the browser:  	https://drive.google.com/uc?id=10aszkneb4--R29_MtU_gs7qf4eHVIG3U  but Gdown can't. Please check connections and permissions. 
+1CPgHdFf4QhzqYSa3C65jJmrAm2QaWtQM ok dur=44s
+1N6CphtOKpXZwMKibYKtTb2lavLuTwxyK ok dur=58s
+1heDQs4iObsE7E1uCYXdaRqKvM1SQKHCW ok dur=46s
+1qyZmE9Lzr1lhpwO-ic5letZCH2bXtdyU ok dur=39s
+1pLKjj1j-C5AYANetC5g6opNCi77ouiR2 ok dur=39s
+1cO98I6cRj4InKumzjYkISdO4NJPLe1ij ok dur=45s
+1gLffTP6vnGQJlwlrt3tXiJFdRc8M9CkX ok dur=32s
+1QfD6mTBkGqH-sl77HNAzoqvK719WvTLv ok dur=33s
+1DfzQhOP_iloFQZoKOiON7darI6mm6Guv ok dur=34s
+1dco4lZXNzSNfB6GLQd5cA9lyso6Akemv ok dur=220s
+14DDeQ1wPRMHmr7f_49p20p3sPMR0_wsR ok dur=192s
+18I2GHq3ytzffaM2J-PzpRBxp9duebfak ok dur=57s
+1qgLIiD0UAe_s7X9e_1J9Qgfk18SIjSgE ok dur=62s
+1K3u5Wm-KNIMgm5JIIXZGHwvJtWL4_8ly ok dur=61s
+1k8h1fNg5v8BlOLckb1A949pAS4yCRKw6 ok dur=61s
+1zKDG3XI40-K4TpjwpT5tCLzXJti4KXpF ok dur=160s
+1yxoS7UauwR9C27-eWFNGpLTroSdHUXRz ok dur=167s
+1HYBwRPon3Qe8v3CNvZImf8IRDIE-876b ok dur=52s
+1LJCoO8d8NVGKN8PUiiJ-VdxFffdFc4gW ok dur=127s
+1SJu4TQ_hEqlVzwn3Z4JMLBB7JlsGPwyS ok dur=520s
+1VH6W1hikNdoRLhHdhQ5UsjWd3375sNMI ok dur=127s
+1Cf5N8cBlBI5ntTVhbxnUrguQIHf2I3F7 ok dur=627s
+1kDi7Y6WwIPLwGTGi8u8y3XYwmDBN9Xji ok dur=66s
+1keoN5JXvDelSq0XrJKW9GD_qp0Aometi ok dur=62s
+1BcGNaC_F20ySYMmkMtBh5Kxahdl6qYdH ok dur=49s
+11InLL9ePQwGqAtEjF4iPkhWtcjKN3wN6 ok dur=92s
+1OtZgr2t6C9v1IGloduhSv_ucAJ2RUs4C ok dur=74s
+1g_Hbqi_U8Bw9RbmMT22qFEsx2RHMNAs9 ok dur=93s
+1EKvXt72yJxq_MDGtAgkZnfT8Nsuuoxdo ok dur=73s
+1TY6HK3vcp4q6ztYIxpJUK-Xfzfx_02tS ok dur=69s
+1nG-S-9QrhstRyOFjf2UxIbdGtJcBigRI ok dur=66s
+1XydtqB-tP4hYarGPxzMheU1BBa-k8GvC ok dur=58s
+1HufUNASOUXFNFctb03BR0yuhBUdE2764 ok dur=68s
+1B6fF-AdtGnUF1xV6H1JhZHwNm3mJsqvj ok dur=39s
+1tZKiPS2DIqwSaOjhBlzIVtIrNPAM16EO ok dur=48s
+10aszkneb4--R29_MtU_gs7qf4eHVIG3U ok dur=8054s
 10TCOvSiWwhYE4AdUmgInuLUbAElcw5hc FAIL download failed: ministrator.  You may still be able to access the file from the browser:  	https://drive.google.com/uc?id=10TCOvSiWwhYE4AdUmgInuLUbAElcw5hc  but Gdown can't. Please check connections and permissions. 
